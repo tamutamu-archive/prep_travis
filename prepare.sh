@@ -23,6 +23,8 @@ function clone_install(){
 clone_install https://github.com/nablarch/nablarch-core.git
 clone_install https://github.com/nablarch/nablarch-core-applog.git
 
+echo "[[[[[[[[[[ ENV ]]]]]]]]"
+env
 
 # Docker
 # docker pull rasato/nablarch-schema-oracle:11.2.0.2-xe
