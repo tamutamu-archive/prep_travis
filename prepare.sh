@@ -12,7 +12,7 @@ function clone_install(){
   git clone $1
   
   repo_dir=`echo $1 | sed -e 's|^.*/\(.*\)\.git|\1|'`
-  pushd repo_dir
+  pushd $repo_dir
   git checkout develop
   chmod +x gradlew
   ./gradlew clean install
