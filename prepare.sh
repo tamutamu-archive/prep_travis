@@ -15,7 +15,7 @@ function clone_install(){
   pushd $repo_dir
   git checkout develop
   chmod +x gradlew
-  ./gradlew clean install
+  ./gradlew clean install --debug
   popd
   
   popd
