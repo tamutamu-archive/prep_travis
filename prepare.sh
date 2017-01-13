@@ -7,11 +7,17 @@ sudo keytool -importcert -alias utndatacorpsgcca -file /tmp/UTN-DATACorpSGC.crt 
 
 ## NAF Install
 function clone_install(){
+  pushd /tmp
+  
+  git clone $1
+  
   repo_dir=`echo $1 | sed -e 's|^.*/\(.*\)\.git|\1|'`
   pushd repo_dir
   git checkout develop
   chmod +x gradlew
   ./gradlew clean install
+  popd
+  
   popd
 }
 
