@@ -20,6 +20,15 @@ function clone_install(){
   
   popd
 }
-
 clone_install https://github.com/nablarch/nablarch-core.git
 clone_install https://github.com/nablarch/nablarch-core-applog.git
+
+
+# Docker
+docker pull rasato/nablarch-schema-oracle:11.2.0.2-xe
+docker run -d --name oraxe --shm-size=1g -p 1521:1521 -p 8080:8080 rasato/nablarch-schema-oracle:11.2.0.2-xe
+
+# TODO for loop check.
+sleep 120
+
+docker exec oraxe ./setPassword.sh password
